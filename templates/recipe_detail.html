@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe.name }}</title>
+</head>
+<style>
+       body{
+
+background-repeat: no-repeat;
+background-size:cover;
+display: flex;
+
+justify-content: center;
+align-items: center;
+
+}
+li{
+text-decoration: none;
+
+}
+li:hover{
+
+cursor: pointer;
+}
+
+a:hover{
+color: red;
+}
+a{
+text-decoration: none;
+color: white;
+
+} 
+body{
+background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20190222/ourmid/pngtree-stylish-home-kitchen-banner-background-material-cabinethoodposter-backgroundadbackground-psdcolorful-image_51342.jpg") ;
+background-size: cover;
+
+
+}
+</style>
+<body>
+    <h1>{{ recipe.name }}</h1>
+    <h2>Ingredients</h2>
+    <ul>
+        {% for ingredient in recipe.ingredients %}
+            <li>{{ ingredient }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Categories</h2>
+    <ul>
+        {% for category in recipe.categories.all %}
+            <li>{{ category.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
